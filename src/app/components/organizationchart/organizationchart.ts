@@ -204,7 +204,7 @@ export class OrganizationChart implements AfterContentInit {
     onNodeClick(event: Event, node: TreeNode) {
         let eventTarget = <Element>event.target;
 
-        if (eventTarget.className && (eventTarget.className.indexOf('p-node-toggler') !== -1 || eventTarget.className.indexOf('p-node-toggler-icon') !== -1)) {
+        if (eventTarget.classList && (eventTarget.classList.contains('p-node-toggler') || eventTarget.classList.contains('p-node-toggler-icon'))) {
             return;
         } else if (this.selectionMode) {
             if (node.selectable === false) {
